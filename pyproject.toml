@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "poc-import-python"
+version = "0.1.0"
+description = ""
+authors = ["Thúlio Costa <github@thul.io>"]
+readme = "README.md"
+packages = [{ include = "poc_python_import" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+requests = "*"
+package_a = { path = "./package_a/" }
+package_b = { path = "./package_b/" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+hello = 'poc_python_import.hello:main'
